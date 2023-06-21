@@ -47,10 +47,6 @@ We welcome contributions to Attendre that can enhance its features or address an
 
 This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute the app within the terms of the license.
 
-## Contact
-
-If you have any questions, suggestions, or feedback regarding Attendre, please contact us at [support@attendre.com](mailto:support@attendre.com). We appreciate your input!
-
 ---
 
 Thank you for choosing Attendre as your attendance management app for your music academy. We hope this app simplifies your administrative tasks and improves efficiency.
