@@ -3,7 +3,7 @@
 Welcome to Attendre, a Flutter-based attendance app designed specifically for music academies. This app aims to simplify and streamline the attendance management process for both instructors and students. With Attendre, you can easily track and record attendance, view attendance history, and generate comprehensive reports. 
 
 ## This is what it look like for now
-![Screenshot One](/readme_assets/Screenshot_1689262653.png)
+![Screenshot One](/readme_assets/Screenshot_1689345453.png)
 
 ## Upcoming Features
 

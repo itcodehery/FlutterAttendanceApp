@@ -28,7 +28,7 @@ class CourseSelectionDropdownState extends State<CourseSelectionDropdown> {
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
         ),
-        color: const Color.fromARGB(255, 255, 245, 246),
+        color: const Color(0xFFE57373),
         child: Align(
           alignment: Alignment.center,
           child: Padding(
@@ -37,12 +37,12 @@ class CourseSelectionDropdownState extends State<CourseSelectionDropdown> {
                 width: 380,
                 child: DropdownButton<String>(
                   alignment: Alignment.center,
-                  dropdownColor: Colors.white,
+                  dropdownColor: const Color(0xFFE57373),
                   style: const TextStyle(
                       fontFamily: 'SFProDisplay',
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black87),
+                      color: Color.fromARGB(255, 255, 235, 234)),
                   isExpanded: true,
                   underline: const SizedBox(),
                   items: courses,

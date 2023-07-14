@@ -15,13 +15,38 @@ class NavigationBottomState extends State<NavigationBottom> {
       label: "Attendance",
     )
   ];
+
+  void showModal(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        content: const Text('Example Dialog'),
+        actions: <TextButton>[
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('Close'),
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       items: List.of(navItems),
       selectedIconTheme: IconThemeData(color: Colors.red[300]),
-      fixedColor: Colors.red[300],
-      onTap: (value) {},
+      selectedItemColor: Colors.red[300],
+      unselectedItemColor: Colors.white,
+      unselectedIconTheme: const IconThemeData(color: Colors.white),
+      showSelectedLabels: true,
+      onTap: (value) {
+        if (value == 1) {
+          showModal(context);
+        }
+      },
     );
   }
 }

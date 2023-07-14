@@ -11,21 +11,44 @@ class BrightMusicAppBar extends StatelessWidget {
       title: const Text(
         'Bright Music Academy',
         style: TextStyle(
-          color: Colors.white,
-          fontFamily: 'SFProDisplay',
+          color: Color.fromARGB(255, 38, 38, 75),
+          fontFamily: 'Musicalina',
+          fontWeight: FontWeight.normal,
+          fontSize: 40,
         ),
       ),
       actions: <Widget>[
         Padding(
-            padding: const EdgeInsets.only(right: 20.0, top: 20),
+            padding: const EdgeInsets.only(right: 20.0, top: 0),
             child: GestureDetector(
               onTap: () {},
-              child: const Text("SIGN IN",
-                  style: TextStyle(fontSize: 14, fontFamily: 'SFProDisplay')),
+              child: const Align(
+                alignment: Alignment.centerRight,
+                child: DecoratedBox(
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      border: Border.symmetric(
+                          horizontal: BorderSide(
+                              color: Color.fromARGB(255, 38, 38, 75), width: 2),
+                          vertical: BorderSide(
+                              color: Color.fromARGB(255, 38, 38, 75),
+                              width: 2))),
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(14, 6, 14, 6),
+                    child: Text("SIGN IN",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 38, 38, 75),
+                            fontSize: 14,
+                            fontFamily: 'SFProDisplay')),
+                  ),
+                ),
+              ),
             )),
       ],
       centerTitle: false,
-      backgroundColor: const Color.fromRGBO(229, 115, 115, 1),
+      backgroundColor: Color(0xFFE57373),
     );
   }
 }
