@@ -11,8 +11,8 @@ class NavigationBottomState extends State<NavigationBottom> {
   List<BottomNavigationBarItem> navItems = [
     const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
     const BottomNavigationBarItem(
-      icon: Icon(Icons.add_box_outlined),
-      label: "Attendance",
+      icon: Icon(Icons.piano),
+      label: "Instruments",
     )
   ];
 
@@ -20,7 +20,7 @@ class NavigationBottomState extends State<NavigationBottom> {
     showDialog(
       context: context,
       builder: (BuildContext context) => AlertDialog(
-        content: const Text('Example Dialog'),
+        content: const Text('This feature has not been implemented yet'),
         actions: <TextButton>[
           TextButton(
             onPressed: () {
@@ -39,7 +39,7 @@ class NavigationBottomState extends State<NavigationBottom> {
       items: List.of(navItems),
       selectedIconTheme: IconThemeData(color: Colors.red[300]),
       selectedItemColor: Colors.red[300],
-      unselectedItemColor: Colors.white,
+      unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
       unselectedIconTheme: const IconThemeData(color: Colors.white),
       showSelectedLabels: true,
       onTap: (value) {
