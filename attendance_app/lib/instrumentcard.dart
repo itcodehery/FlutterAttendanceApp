@@ -18,7 +18,7 @@ class InstrumentCard extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Today",
+                  "22/07/2023",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

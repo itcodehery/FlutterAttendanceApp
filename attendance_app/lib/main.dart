@@ -42,7 +42,7 @@ class AttendreState extends State<Attendre> {
                     Text(item,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 18,
                         )),
                     const Icon(color: Colors.white, Icons.chevron_right),
                   ]),
@@ -74,11 +74,12 @@ class AttendreState extends State<Attendre> {
                 padding: const EdgeInsets.all(10),
                 child: Column(children: [
                   const CategoryTitleText(categoryTitle: 'TODAY'),
+                  const SizedBox(height: 10),
+                  const InstrumentCard(),
+                  const CategoryTitleText(categoryTitle: 'COURSES'),
                   Padding(
                       padding: const EdgeInsets.all(5),
                       child: instrumentsList(instruments)),
-                  const SizedBox(height: 10),
-                  const InstrumentCard(),
                 ])),
           )),
       theme: ThemeData(
@@ -101,7 +102,7 @@ class CategoryTitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
       const SizedBox(
-        height: 10,
+        height: 20,
       ),
       Text(
         categoryTitle,
