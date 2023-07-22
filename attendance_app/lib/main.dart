@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:attendance_app/navigationbottom.dart';
-import 'package:attendance_app/bright_appbar.dart';
+import 'package:attendance_app/home_appbar.dart';
 import 'package:attendance_app/instrumentcard.dart';
 
 void main() {
@@ -57,31 +57,29 @@ class AttendreState extends State<Attendre> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DefaultTabController(
-          length: 3,
-          child: Scaffold(
-            //made appbar into its own widget class in bright_appbar.dart
-            appBar: const PreferredSize(
-                preferredSize: Size.fromHeight(56), child: BrightMusicAppBar()),
-            //navbar is its own widget in navigationbottom.dart
-            bottomNavigationBar: const NavigationBottom(),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {},
-              backgroundColor: Colors.red[300],
-              child: const Icon(Icons.add),
-            ),
-            body: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(children: [
-                  const CategoryTitleText(categoryTitle: 'TODAY'),
-                  const SizedBox(height: 10),
-                  const InstrumentCard(),
-                  const CategoryTitleText(categoryTitle: 'COURSES'),
-                  Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: instrumentsList(instruments)),
-                ])),
-          )),
+      home: Scaffold(
+        //made appbar into its own widget class in bright_appbar.dart
+        appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(56), child: BrightMusicAppBar()),
+        //navbar is its own widget in navigationbottom.dart
+        bottomNavigationBar: const NavigationBottom(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.red[300],
+          child: const Icon(Icons.add),
+        ),
+        body: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(children: [
+              const CategoryTitleText(categoryTitle: 'TODAY'),
+              const SizedBox(height: 10),
+              const InstrumentCard(),
+              const CategoryTitleText(categoryTitle: 'COURSES'),
+              Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: instrumentsList(instruments)),
+            ])),
+      ),
       theme: ThemeData(
           fontFamily: 'SFProDisplay',
           primaryColor: const Color.fromARGB(255, 255, 255, 255),
