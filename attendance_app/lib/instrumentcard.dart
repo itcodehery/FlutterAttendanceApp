@@ -15,6 +15,9 @@ class InstrumentCard extends StatelessWidget {
         child: Padding(
             padding: EdgeInsets.all(10),
             child: Column(children: [
+              SizedBox(
+                height: 10,
+              ),
               Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -42,6 +45,9 @@ class InstrumentCard extends StatelessWidget {
                   "Current Class: Keyboard",
                   style: TextStyle(color: Colors.white),
                 ),
+              ),
+              SizedBox(
+                height: 10,
               ),
             ])));
   }

@@ -72,6 +72,7 @@ class AttendreState extends State<Attendre> {
             padding: const EdgeInsets.all(10),
             child: Column(children: [
               const CategoryTitleText(categoryTitle: 'TODAY'),
+              courseCard(),
               const SizedBox(height: 10),
               const InstrumentCard(),
               const CategoryTitleText(categoryTitle: 'COURSES'),
@@ -98,9 +99,9 @@ class CategoryTitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+    return Column(children: [
       const SizedBox(
-        height: 20,
+        height: 10,
       ),
       Text(
         categoryTitle,
@@ -110,7 +111,7 @@ class CategoryTitleText extends StatelessWidget {
           letterSpacing: 4,
         ),
       ),
-      const SizedBox(height: 20),
+      const SizedBox(height: 10),
     ]);
   }
 }

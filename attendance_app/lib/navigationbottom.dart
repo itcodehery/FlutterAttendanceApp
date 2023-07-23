@@ -20,14 +20,26 @@ class NavigationBottomState extends State<NavigationBottom> {
     showDialog(
       context: context,
       builder: (BuildContext context) => AlertDialog(
-        content: const Text('This feature has not been implemented yet'),
+        backgroundColor: const Color.fromARGB(255, 20, 20, 20),
+        content: const Text(
+          'This feature has not been implemented yet',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         actions: <TextButton>[
           TextButton(
+            style: const ButtonStyle(alignment: Alignment.center),
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text('Close'),
-          )
+            child: const Text(
+              'Close',
+              style: TextStyle(
+                color: Color.fromARGB(255, 229, 115, 155),
+              ),
+            ),
+          ),
         ],
       ),
     );

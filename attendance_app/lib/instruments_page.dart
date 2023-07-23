@@ -9,10 +9,22 @@ class InstrumentsPage extends StatefulWidget {
 }
 
 class InstrumentsPageState extends State<InstrumentsPage> {
+  final List<String> instruments = [
+    "Keyboard",
+    "Guitar",
+    "Piano",
+    "Vocals",
+    "Violin"
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: InstrumentAppBar(),
-    );
+    return DefaultTabController(
+        length: instruments.length,
+        child: Scaffold(
+            appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(300),
+          child: InstrumentAppBar(),
+        )));
   }
 }

@@ -15,17 +15,14 @@ class InstrumentAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: instruments.length,
-      child: AppBar(
-        backgroundColor: const Color.fromARGB(255, 20, 20, 20),
-        title: const Text(
-          'Bright Music Academy',
-        ),
-        centerTitle: true,
-        bottom: TabBar(
-          tabs: [for (var item in instruments) Tab(text: item)],
-        ),
+    return AppBar(
+      backgroundColor: const Color.fromARGB(255, 20, 20, 20),
+      title: const Text(
+        'Bright Music Academy',
+      ),
+      centerTitle: true,
+      bottom: TabBar(
+        tabs: [for (var item in instruments) Tab(text: item)],
       ),
     );
   }
