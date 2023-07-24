@@ -21,9 +21,6 @@ class InstrumentAppBar extends StatelessWidget {
         'Bright Music Academy',
       ),
       centerTitle: true,
-      bottom: TabBar(
-        tabs: [for (var item in instruments) Tab(text: item)],
-      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:attendance_app/instruments_page.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBottom extends StatefulWidget {
@@ -47,18 +48,18 @@ class NavigationBottomState extends State<NavigationBottom> {
 
   @override
   Widget build(BuildContext context) {
+    //build a working bottom nav bar that leads to the instruments page
+    //when clicked
+
     return BottomNavigationBar(
-      items: List.of(navItems),
-      selectedIconTheme: IconThemeData(color: Colors.red[300]),
-      selectedItemColor: Colors.red[300],
-      unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
-      unselectedIconTheme: const IconThemeData(color: Colors.white),
-      showSelectedLabels: true,
-      onTap: (value) {
-        if (value == 1) {
-          showModal(context);
-        }
-      },
-    );
+        items: List.of(navItems),
+        selectedIconTheme: IconThemeData(color: Colors.red[300]),
+        selectedItemColor: Colors.red[300],
+        unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+        unselectedIconTheme: const IconThemeData(color: Colors.white),
+        showSelectedLabels: true,
+        onTap: (value) {
+          Navigator.of(context).pop(const InstrumentsPage());
+        });
   }
 }

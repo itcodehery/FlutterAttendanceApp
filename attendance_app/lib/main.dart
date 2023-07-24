@@ -26,6 +26,15 @@ class AttendreState extends State<Attendre> {
     "Violin"
   ];
 
+  Widget courseCard(String courseTitle, TimeOfDay timings) {
+    return Card(
+        child: SizedBox(
+      child: Padding(
+          padding: const EdgeInsets.fromLTRB(100, 10, 100, 10),
+          child: Text(courseTitle)),
+    ));
+  }
+
   Widget instrumentsList(List<String> instruments) {
     return Column(
       children: [
@@ -72,7 +81,6 @@ class AttendreState extends State<Attendre> {
             padding: const EdgeInsets.all(10),
             child: Column(children: [
               const CategoryTitleText(categoryTitle: 'TODAY'),
-              courseCard(),
               const SizedBox(height: 10),
               const InstrumentCard(),
               const CategoryTitleText(categoryTitle: 'COURSES'),

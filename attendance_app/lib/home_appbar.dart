@@ -5,15 +5,6 @@ class BrightMusicAppBar extends StatelessWidget {
     super.key,
   });
 
-  Widget courseCard(String courseTitle, TimeOfDay timings) {
-    return Card(
-        child: SizedBox(
-      child: Padding(
-          padding: const EdgeInsets.fromLTRB(100, 10, 100, 10),
-          child: Text(courseTitle)),
-    ));
-  }
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
