@@ -1,5 +1,7 @@
+import 'package:attendance_app/instrument_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:attendance_app/homepage.dart';
+import 'package:attendance_app/instruments_page.dart';
 
 void main() {
   runApp(const Attendre());
@@ -20,6 +22,10 @@ class AttendreState extends State<Attendre> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const Homepage(),
+      routes: {
+        'Home': (context) => const Homepage(),
+        'Instruments': (context) => const InstrumentsPage()
+      },
       theme: ThemeData(
           fontFamily: 'SFProDisplay',
           primaryColor: const Color.fromARGB(255, 255, 255, 255),

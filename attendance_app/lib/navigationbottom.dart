@@ -21,12 +21,6 @@ class NavigationBottomState extends State<NavigationBottom> {
   int selectedIndex = 0;
   static List<Widget> navigationPages = const [Homepage(), InstrumentsPage()];
 
-  void onTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
   void showModal(BuildContext context) {
     showDialog(
       context: context,
@@ -62,14 +56,22 @@ class NavigationBottomState extends State<NavigationBottom> {
     //when clicked
 
     return BottomNavigationBar(
-      items: List.of(navItems),
-      selectedIconTheme: IconThemeData(color: Colors.red[300]),
-      selectedItemColor: Colors.red[300],
-      unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
-      unselectedIconTheme: const IconThemeData(color: Colors.white),
-      showSelectedLabels: true,
-      currentIndex: selectedIndex,
-      onTap: onTapped,
-    );
+        items: List.of(navItems),
+        selectedIconTheme: IconThemeData(color: Colors.red[300]),
+        selectedItemColor: Colors.red[300],
+        unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+        unselectedIconTheme: const IconThemeData(color: Colors.white),
+        showSelectedLabels: true,
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushReplacementNamed(context, 'Home');
+              break;
+            case 1:
+              Navigator.pushReplacementNamed(context, 'Instruments');
+              break;
+          }
+        });
   }
 }
