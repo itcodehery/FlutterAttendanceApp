@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 
 class InstrumentAppBar extends StatelessWidget {
-  InstrumentAppBar({
+  const InstrumentAppBar({
     super.key,
   });
-
-  final List<String> instruments = [
-    "Keyboard",
-    "Guitar",
-    "Piano",
-    "Vocals",
-    "Violin"
-  ];
 
   @override
   Widget build(BuildContext context) {

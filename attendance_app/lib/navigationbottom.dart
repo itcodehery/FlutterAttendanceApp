@@ -1,5 +1,6 @@
 import 'package:attendance_app/instruments_page.dart';
 import 'package:flutter/material.dart';
+import 'package:attendance_app/homepage.dart';
 
 class NavigationBottom extends StatefulWidget {
   const NavigationBottom({Key? key}) : super(key: key);
@@ -16,6 +17,15 @@ class NavigationBottomState extends State<NavigationBottom> {
       label: "Instruments",
     )
   ];
+
+  int selectedIndex = 0;
+  static List<Widget> navigationPages = const [Homepage(), InstrumentsPage()];
+
+  void onTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
   void showModal(BuildContext context) {
     showDialog(
@@ -52,14 +62,14 @@ class NavigationBottomState extends State<NavigationBottom> {
     //when clicked
 
     return BottomNavigationBar(
-        items: List.of(navItems),
-        selectedIconTheme: IconThemeData(color: Colors.red[300]),
-        selectedItemColor: Colors.red[300],
-        unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
-        unselectedIconTheme: const IconThemeData(color: Colors.white),
-        showSelectedLabels: true,
-        onTap: (value) {
-          Navigator.of(context).pop(const InstrumentsPage());
-        });
+      items: List.of(navItems),
+      selectedIconTheme: IconThemeData(color: Colors.red[300]),
+      selectedItemColor: Colors.red[300],
+      unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+      unselectedIconTheme: const IconThemeData(color: Colors.white),
+      showSelectedLabels: true,
+      currentIndex: selectedIndex,
+      onTap: onTapped,
+    );
   }
 }
