@@ -38,7 +38,6 @@ class HomepageState extends State<Homepage> {
       //made appbar into its own widget class in bright_appbar.dart
       //moved appbar to main.dart
       //navbar is its own widget in navigationbottom.dart
-      bottomNavigationBar: const NavigationBottom(),
       body: Padding(
           padding: const EdgeInsets.all(10),
           child:

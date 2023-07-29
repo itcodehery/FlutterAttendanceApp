@@ -1,4 +1,5 @@
 import 'package:attendance_app/Pages/Home%20Content/home_appbar.dart';
+import 'package:attendance_app/Pages/addpage.dart';
 import 'package:flutter/material.dart';
 import 'package:attendance_app/Pages/homepage.dart';
 import 'package:attendance_app/Pages/instruments_page.dart';
@@ -18,16 +19,22 @@ class Attendre extends StatefulWidget {
 //for the list of students currently in each
 //course
 class AttendreState extends State<Attendre> {
-  int selectedIndex = 0;
+  int selectedIndex = 1;
 
-  static List<Widget> navigationPages = const [Homepage(), InstrumentsPage()];
+  static List<Widget> navigationPages = const [
+    InstrumentsPage(),
+    Homepage(),
+    Addpage()
+  ];
 
   List<BottomNavigationBarItem> navItems = [
-    const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
     const BottomNavigationBarItem(
       icon: Icon(Icons.piano),
       label: "Instruments",
-    )
+    ),
+    const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+    const BottomNavigationBarItem(
+        icon: Icon(Icons.add_box_rounded), label: "Add")
   ];
 
   void _onTabTapped(int index) {
@@ -43,12 +50,6 @@ class AttendreState extends State<Attendre> {
         appBar: const PreferredSize(
             preferredSize: Size.fromHeight(56), child: BrightMusicAppBar()),
         body: navigationPages[selectedIndex],
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
-          backgroundColor: Colors.red[300],
-          label: const Text("Add"),
-          icon: const Icon(Icons.add),
-        ),
         bottomNavigationBar: BottomNavigationBar(
           items: List.of(navItems),
           selectedIconTheme: IconThemeData(color: Colors.red[300]),
@@ -61,10 +62,6 @@ class AttendreState extends State<Attendre> {
           onTap: _onTabTapped,
         ),
       ),
-      routes: {
-        'Home': (context) => const Homepage(),
-        'Instruments': (context) => const InstrumentsPage()
-      },
       theme: ThemeData(
           fontFamily: 'SFProDisplay',
           primaryColor: const Color.fromARGB(255, 255, 255, 255),

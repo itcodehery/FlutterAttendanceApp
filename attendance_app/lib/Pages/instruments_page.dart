@@ -41,7 +41,7 @@ class InstrumentsPageState extends State<InstrumentsPage> {
                 style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30))),
-                    backgroundColor: Colors.red[300]),
+                    backgroundColor: Colors.white10),
                 onPressed: () {},
                 child:
                     const Text("MARK", style: TextStyle(color: Colors.white)),
