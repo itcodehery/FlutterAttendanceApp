@@ -10,8 +10,8 @@ class InstrumentCard extends StatelessWidget {
     return const Card(
         color: Color.fromARGB(255, 30, 30, 30),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-        ),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            side: BorderSide(color: Colors.white10)),
         child: Padding(
             padding: EdgeInsets.all(10),
             child: Column(children: [
