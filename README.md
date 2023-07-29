@@ -4,6 +4,7 @@ Welcome to the attendance app for Bright Music Academy, a Flutter-based attendan
 
 ## This is what it look like for now
 ![Screenshot One](/readme_assets/Screenshot_1690619718.png)
+<img src="/readme_assets/Screenshot_1690619718.png" alt="Screenshot" width="720" height="1600"/>
 
 ## Upcoming Features
 
