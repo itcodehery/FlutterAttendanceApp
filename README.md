@@ -2,10 +2,12 @@
 
 Welcome to the attendance app for Bright Music Academy, a Flutter-based attendance app designed specifically for this music academy. This app aims to simplify and streamline the attendance management process for both instructors and students. With it, you can easily track and record attendance, view attendance history, and generate comprehensive reports. Intuitive and visually appealing interface for easy navigation and usability.
 
-## This is what it look like for now
+## Beta Screenshots
+<p float="left">
 <img src="/readme_assets/Home.png" alt="Screenshot" width="135" height="300"/>
 <img src="/readme_assets/Add.png" alt="Screenshot" width="135" height="300"/>
 <img src="/readme_assets/Instruments.png" alt="Screenshot" width="135" height="300"/>
+</p>
 
 ## Upcoming Features
 
