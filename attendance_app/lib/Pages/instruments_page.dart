@@ -1,7 +1,6 @@
 import 'package:attendance_app/Pages/homepage.dart';
 import 'package:attendance_app/Pages/Instrument%20Content/instrumentcard.dart';
 import 'package:flutter/material.dart';
-import 'package:attendance_app/Pages/navigationbottom.dart';
 
 class InstrumentsPage extends StatefulWidget {
   const InstrumentsPage({Key? key}) : super(key: key);
@@ -20,8 +19,7 @@ class InstrumentsPageState extends State<InstrumentsPage> {
 
     return Column(
       children: [
-        const CategoryTitleText(categoryTitle: "STUDENTS"),
-        const SizedBox(height: 10),
+        const CategoryTitleText(categoryTitle: "Students"),
         for (var item in students.keys)
           Card(
             color: const Color.fromARGB(255, 30, 30, 30),
@@ -60,7 +58,6 @@ class InstrumentsPageState extends State<InstrumentsPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const InstrumentCard(),
               instrumentsMarkList(),
             ],
           )),

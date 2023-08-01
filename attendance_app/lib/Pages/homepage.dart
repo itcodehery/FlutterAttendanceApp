@@ -42,9 +42,9 @@ class HomepageState extends State<Homepage> {
           padding: const EdgeInsets.all(10),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const CategoryTitleText(categoryTitle: 'TODAY'),
+            const CategoryTitleText(categoryTitle: 'Today'),
             const InstrumentCard(),
-            const CategoryTitleText(categoryTitle: 'COURSES'),
+            const CategoryTitleText(categoryTitle: 'Courses'),
             instrumentsList(instruments),
           ])),
     );
@@ -72,7 +72,7 @@ class CategoryTitleText extends StatelessWidget {
           style: const TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
             fontSize: 16,
-            letterSpacing: 4,
+            letterSpacing: 2,
           ),
           textAlign: TextAlign.start,
         ),

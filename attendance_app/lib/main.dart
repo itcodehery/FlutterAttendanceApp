@@ -29,7 +29,7 @@ class AttendreState extends State<Attendre> {
 
   List<BottomNavigationBarItem> navItems = [
     const BottomNavigationBarItem(
-      icon: Icon(Icons.piano),
+      icon: Icon(Icons.music_note),
       label: "Instruments",
     ),
     const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
@@ -66,6 +66,7 @@ class AttendreState extends State<Attendre> {
           fontFamily: 'SFProDisplay',
           primaryColor: const Color.fromARGB(255, 255, 255, 255),
           canvasColor: const Color.fromARGB(255, 20, 20, 20)),
+      color: Colors.red[300],
     );
   }
 }

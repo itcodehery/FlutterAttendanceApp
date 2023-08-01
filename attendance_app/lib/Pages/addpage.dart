@@ -1,4 +1,4 @@
-import 'package:attendance_app/Pages/AddPage%20Pages/addStudent.dart';
+import 'package:attendance_app/Pages/AddPage%20Pages/add_Student.dart';
 import 'package:flutter/material.dart';
 
 class Addpage extends StatefulWidget {
@@ -14,6 +14,10 @@ class AddpageState extends State<Addpage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+          floatingActionButton: FloatingActionButton(
+              backgroundColor: Colors.red[300],
+              child: const Icon(Icons.add),
+              onPressed: () {}),
           appBar: AppBar(
             backgroundColor: const Color.fromARGB(255, 20, 20, 20),
             toolbarHeight: 4,
