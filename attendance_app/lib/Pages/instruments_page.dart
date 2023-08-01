@@ -1,3 +1,4 @@
+import 'package:attendance_app/Pages/AddPage%20Pages/add_Student.dart';
 import 'package:attendance_app/Pages/homepage.dart';
 import 'package:attendance_app/Pages/Instrument%20Content/instrumentcard.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,43 @@ class InstrumentsPage extends StatefulWidget {
 class InstrumentsPageState extends State<InstrumentsPage> {
   Widget instrumentsMarkList() {
     Map<String, String> students = {
-      "Sahana": "3:00pm - 4:00pm",
-      "Tejaswini": "4:00pm - 6:00pm",
-      "Ivaan": "3:00pm - 5:00pm"
+      "Sahana": "Keyboard",
+      "Tejaswini": "Keyboard",
+      "Ivaan": "Piano",
+      "Aditya": "Violin",
+      'Taashini': 'Vocals',
     };
+
+    List<String> timingsWeekdays = ['4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
     return Column(
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              width: 2,
+            ),
+            Flex(direction: Axis.vertical, children: [
+              const SizedBox(
+                height: 10,
+              ),
+              TimingDropMenu(
+                  droplist: timingsWeekdays,
+                  timinglabel: timingsWeekdays.first),
+              const SizedBox(height: 10),
+            ]),
+            const SizedBox(width: 10),
+            Flex(direction: Axis.vertical, children: [
+              const SizedBox(
+                height: 10,
+              ),
+              TimingDropMenu(
+                  droplist: instruments, timinglabel: instruments.first),
+              const SizedBox(height: 10),
+            ]),
+          ],
+        ),
         const CategoryTitleText(categoryTitle: "Students"),
         for (var item in students.keys)
           Card(
@@ -61,6 +92,44 @@ class InstrumentsPageState extends State<InstrumentsPage> {
               instrumentsMarkList(),
             ],
           )),
+    );
+  }
+}
+
+class TimingDropMenu extends StatelessWidget {
+  const TimingDropMenu({
+    super.key,
+    required this.droplist,
+    required this.timinglabel,
+  });
+
+  final List<String> droplist;
+  final String timinglabel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.white38, width: 2),
+          borderRadius: BorderRadius.circular(10)),
+      child: DropdownMenu(
+        trailingIcon: const Icon(Icons.arrow_drop_down, color: Colors.white54),
+        width: 320 / 2 - 10,
+        inputDecorationTheme: InputDecorationTheme(
+            activeIndicatorBorder: BorderSide(color: Colors.red[300]!),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5),
+                borderSide: const BorderSide(color: Colors.white54, width: 5))),
+        dropdownMenuEntries: [
+          for (var item in droplist) DropdownMenuEntry(value: item, label: item)
+        ],
+        textStyle: const TextStyle(color: Colors.white54),
+        menuStyle: const MenuStyle(
+          side: MaterialStatePropertyAll(
+              BorderSide(color: Colors.white, width: 2)),
+        ),
+        initialSelection: Colors.white,
+      ),
     );
   }
 }

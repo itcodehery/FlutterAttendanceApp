@@ -1,3 +1,4 @@
+import 'package:attendance_app/Pages/homepage.dart';
 import 'package:flutter/material.dart';
 
 class AddStudent extends StatefulWidget {
@@ -59,26 +60,67 @@ class _AddStudentState extends State<AddStudent> {
                       }
                       return null;
                     }),
-                DropdownMenu(
-                  width: 200,
-                  dropdownMenuEntries: [
-                    for (var item in instruments)
-                      DropdownMenuEntry(value: item, label: item)
-                  ],
-                  label: const Text('Select Course'),
-                  textStyle: const TextStyle(color: Colors.white54),
-                  menuStyle: const MenuStyle(
-                      side: MaterialStatePropertyAll(BorderSide(
-                        color: Colors.white54,
-                      )),
-                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          side: BorderSide(color: Colors.white54)))),
-                  initialSelection: 'No Course Selected',
-                )
+                CourseDropdownMenu(
+                  droplist: instruments,
+                  label: 'Enter Course',
+                ),
               ],
             )),
       ),
+    );
+  }
+}
+
+class CourseDropdownMenu extends StatelessWidget {
+  CourseDropdownMenu({
+    super.key,
+    required this.droplist,
+    required this.label,
+  });
+
+  final List<String> droplist;
+  final String label;
+  String? selectedCourse;
+
+  @override
+  Widget build(BuildContext context) {
+    // return DropdownMenu(
+    //   width: 320,
+    //   inputDecorationTheme: InputDecorationTheme(
+    //       activeIndicatorBorder: BorderSide(color: Colors.red[300]!),
+    //       border: OutlineInputBorder(
+    //           borderRadius: BorderRadius.circular(5),
+    //           borderSide: const BorderSide(color: Colors.white54))),
+    //   dropdownMenuEntries: [
+    //     for (var item in droplist) DropdownMenuEntry(value: item, label: item)
+    //   ],
+    //   label: const Text('Select Course'),
+    //   textStyle: const TextStyle(color: Colors.white54),
+    //   menuStyle: const MenuStyle(
+    //     side: MaterialStatePropertyAll(BorderSide(
+    //       color: Colors.white,
+    //     )),
+    //   ),
+    // );
+    return Container(
+      margin: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.white54, width: 1.4),
+          borderRadius: BorderRadius.circular(10)),
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+      child: DropdownButton(
+          value: selectedCourse,
+          dropdownColor: Colors.white,
+          style: const TextStyle(color: Colors.black),
+          items: instruments.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+          onChanged: (value) {
+            selectedCourse = value;
+          }),
     );
   }
 }
