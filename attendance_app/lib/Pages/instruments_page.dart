@@ -21,6 +21,14 @@ class InstrumentsPageState extends State<InstrumentsPage> {
     };
 
     List<String> timingsWeekdays = ['4:00pm', '5:00pm', '6:00pm', '7:00pm'];
+    List<String> pagedInstruments = [
+      "All",
+      "Keyboard",
+      "Guitar",
+      "Piano",
+      "Vocals",
+      "Violin"
+    ];
 
     return Column(
       children: [
@@ -45,7 +53,7 @@ class InstrumentsPageState extends State<InstrumentsPage> {
                 height: 10,
               ),
               TimingDropMenu(
-                  droplist: instruments, timinglabel: instruments.first),
+                  droplist: pagedInstruments, timinglabel: instruments.first),
               const SizedBox(height: 10),
             ]),
           ],
@@ -128,7 +136,8 @@ class TimingDropMenu extends StatelessWidget {
           side: MaterialStatePropertyAll(
               BorderSide(color: Colors.white, width: 2)),
         ),
-        initialSelection: Colors.white,
+        initialSelection:
+            DropdownMenuEntry(value: droplist.first, label: droplist.first),
       ),
     );
   }
